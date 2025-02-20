@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Gift Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+    <div class="container">
+        <!-- Left Side - Results -->
+        <section id="resultsSection">
+            <div id="recommendationsList"></div>
+        </section>
+
+        <!-- Middle Section - Main Prompt -->
+        <section class="prompt-section">
+            <div class="prompt-container">
+                <header>
+                    <h1>AI Gift Advisor</h1>
+                    <p>Describe who you're shopping for</p>
+                </header>
+                <div class="prompt-input-wrapper">
+                    <textarea id="mainPrompt" placeholder="Example: Looking for a gift for my tech-savvy brother who loves coffee and reading..."></textarea>
+                    <button type="button" id="generateBtn">Get Ideas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Side - Smart Filters -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Relationship</label>
+                    <div class="chip-select" id="relationshipSelect">
+                        <div class="chip" data-value="friend">Friend</div>
+                        <div class="chip" data-value="family">Family</div>
+                        <div class="chip" data-value="partner">Partner</div>
+                        <div class="chip" data-value="colleague">Colleague</div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Age Range</label>
+                    <div class="range-slider">
+                        <input type="range" id="ageSlider" min="0" max="100" value="25">
+                        <span class="range-value" id="ageValue">25 years</span>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Occasion</label>
+                    <div class="occasion-select">
+                        <div class="occasion-option" data-value="birthday">
+                            <span class="icon">🎂</span>
+                            <span>Birthday</span>
+                        </div>
+                        <div class="occasion-option" data-value="wedding">
+                            <span class="icon">💍</span>
+                            <span>Wedding</span>
+                        </div>
+                        <div class="occasion-option" data-value="graduation">
+                            <span class="icon">🎓</span>
+                            <span>Graduation</span>
+                        </div>
+                        <div class="occasion-option" data-value="holiday">
+                            <span class="icon">🎄</span>
+                            <span>Holiday</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Budget</label>
+                    <div class="budget-control">
+                        <div class="currency-toggle" id="currencyToggle">
+                            <span class="active">USD</span>
+                            <span>EUR</span>
+                            <span>GBP</span>
+                        </div>
+                        <div class="budget-slider">
+                            <div class="slider-track"></div>
+                            <input type="range" id="budgetMin" min="0" max="1000" value="50">
+                            <input type="range" id="budgetMax" min="0" max="1000" value="200">
+                        </div>
+                        <div class="budget-values">
+                            <span id="minValue">$50</span>
+                            <span id="maxValue">$200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interests-tags">
+                    <label>Common Interests</label>
+                    <div class="tag-cloud">
+                        <span class="tag">Technology</span>
+                        <span class="tag">Books</span>
+                        <span class="tag">Sports</span>
+                        <span class="tag">Music</span>
+                        <span class="tag">Art</span>
+                        <span class="tag">Gaming</span>
+                        <span class="tag">Cooking</span>
+                        <span class="tag">Travel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
